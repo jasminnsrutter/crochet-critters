@@ -45,4 +45,16 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    // A user can have many orders
+    public function customOrders()
+    {
+        return $this->hasMany(CustomOrder::class);
+    }
+
+    // A user can have many reviews
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
 }
