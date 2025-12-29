@@ -51,3 +51,6 @@ def care_guide(request):
 
 def shipping(request):
     return render(request, 'info/shipping.html')
+
+def custom_order(request):
+    return render(request, 'products/custom_order.html')

@@ -28,4 +28,5 @@ urlpatterns = [
     path('critter/<int:critter_id>/review/', views.add_review, name='add_review'),
     path('care-guide/', views.care_guide, name='care_guide'),
     path('shipping/', views.shipping, name='shipping'),
+    path('custom-order/', views.custom_order, name='custom_order'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

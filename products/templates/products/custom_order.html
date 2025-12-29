@@ -1,0 +1,72 @@
+{% extends 'products/base.html' %}
+
+{% block content %}
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="text-center mb-5">
+          <h6 class="text-uppercase fw-bold text-muted mb-2" style="letter-spacing: 2px;">Bespoke Friends</h6>
+          <h1 class="display-4 fw-bold" style="color: var(--cocoa-brown);">Request a Custom Critter</h1>
+          <p class="lead text-muted">Have a specific animal or color in mind? Let’s bring your imagination to life.</p>
+        </div>
+
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+          <div class="row g-0">
+            <div class="col-md-5 d-none d-md-block">
+              <img src="https://images.unsplash.com/photo-1584992236310-6edddc08acff?auto=format&fit=crop&q=80&w=800" class="h-100 w-100" style="object-fit: cover;" alt="Handmade Crochet Supplies" />
+            </div>
+            <div class="col-md-7 p-4 p-lg-5">
+              <form>
+                <div class="mb-3">
+                  <label class="form-label fw-bold">What are we making?</label>
+                  <input type="text" class="form-control" placeholder="e.g. A tiny blue elephant" />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label fw-bold">Color Palette</label>
+                  <select class="form-select">
+                    <option>Pastels</option>
+                    <option>Earth Tones</option>
+                    <option>Bright & Bold</option>
+                    <option>Surprise Me!</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label fw-bold">Special Details</label>
+                  <textarea class="form-control" rows="4" placeholder="Mention any specific sizes, accessories (like a tiny hat), or if it's for a special occasion."></textarea>
+                </div>
+                <button type="button" class="btn btn-custom-shop w-100 rounded-pill py-2">Send Request</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-5 g-4 text-center">
+          <div class="col-md-4">
+            <h6 class="fw-bold">1. Discussion</h6>
+            <p class="small text-muted">We’ll email you to finalize colors, size, and pricing.</p>
+          </div>
+          <div class="col-md-4">
+            <h6 class="fw-bold">2. Creation</h6>
+            <p class="small text-muted">Custom orders take 2-3 weeks to stitch with love.</p>
+          </div>
+          <div class="col-md-4">
+            <h6 class="fw-bold">3. Adoption</h6>
+            <p class="small text-muted">Once finished, we'll send a photo and ship him home!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .btn-custom-shop {
+      background-color: var(--terracotta);
+      color: white;
+      transition: 0.3s;
+    }
+    .btn-custom-shop:hover {
+      background-color: var(--cocoa-brown);
+      color: white;
+    }
+  </style>
+{% endblock %}
