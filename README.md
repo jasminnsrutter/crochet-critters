@@ -20,3 +20,13 @@ A Django-based web application to showcase handmade crochet products (critters) 
    ```bash
    git clone [https://github.com/YOUR_USERNAME/crochet-critter.git](https://github.com/YOUR_USERNAME/crochet-critter.git)
    cd crochet-critter
+
+## 🔑 Admin Access
+To manage the crochet critters and view reviews, you can access the admin dashboard using the following credentials:
+
+- **URL:** `http://127.0.0.1:8000/admin`
+- **Username:** `admin`
+- **Email:** `admin@test.com`
+- **Password:** `Test123!`
+
+*Note: In a production environment, please change these credentials immediately.*
