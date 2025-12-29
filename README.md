@@ -1,0 +1,32 @@
+# Crochet-Critter 🧶
+
+A Django-based web application to showcase handmade crochet products (critters) with a built-in review and rating system.
+
+## 🚀 Features
+- **Product Gallery:** Browse through all crochet critters.
+- **Detailed View:** View individual critter details, pricing, and high-quality images.
+- **User Reviews:** Authenticated users can leave star ratings and feedback.
+- **Admin Dashboard:** Easy-to-use back-end to manage inventory and photos.
+
+## 🛠️ Tech Stack
+- **Backend:** Django 6.0
+- **Database:** SQLite (Default)
+- **Imaging:** Pillow
+- **Frontend:** HTML/CSS (Django Templates)
+
+## ⚙️ Installation & Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/YOUR_USERNAME/crochet-critter.git](https://github.com/YOUR_USERNAME/crochet-critter.git)
+   cd crochet-critter
+
+## 🔑 Admin Access
+To manage the crochet critters and view reviews, you can access the admin dashboard using the following credentials:
+
+- **URL:** `http://127.0.0.1:8000/admin`
+- **Username:** `admin`
+- **Email:** `admin@test.com`
+- **Password:** `Test123!`
+
+*Note: In a production environment, please change these credentials immediately.*
