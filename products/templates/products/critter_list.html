@@ -1,0 +1,69 @@
+{% extends 'products/base.html' %}
+
+{% block content %}
+  <div class="text-center mb-5 mt-4">
+    <h6 class="text-uppercase fw-bold text-muted mb-2" style="letter-spacing: 2px;">Handmade with Love</h6>
+    <h1 class="display-5 fw-bold" style="color: var(--cocoa-brown);">Meet the Critters</h1>
+    <div class="mx-auto mt-3" style="width: 50px; height: 3px; background-color: var(--terracotta); border-radius: 2px;"></div>
+  </div>
+
+  <div class="row g-4">
+    {% for critter in critters %}
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden transition-card">
+          {% if critter.image %}
+            <div class="position-relative">
+              <img src="{{ critter.image.url }}" class="card-img-top" style="height: 280px; object-fit: cover;" alt="{{ critter.name }}" />
+              <div class="position-absolute bottom-0 end-0 m-3 badge bg-white text-dark shadow-sm p-2 px-3 rounded-pill fw-bold">${{ critter.price }}</div>
+            </div>
+          {% endif %}
+
+          <div class="card-body p-4 text-center d-flex flex-column">
+            <div class="mb-2 d-flex align-items-center justify-content-center gap-1">
+              <div class="stars text-warning" style="font-size: 0.85rem; letter-spacing: 1px;">
+                {% if critter.average_rating >= 4.5 %}
+                  ★★★★★
+                {% elif critter.average_rating >= 3.5 %}
+                  ★★★★☆
+                {% elif critter.average_rating >= 2.5 %}
+                  ★★★☆☆
+                {% elif critter.average_rating >= 1.5 %}
+                  ★★☆☆☆
+                {% elif critter.average_rating > 0 %}
+                  ★☆☆☆☆
+                {% else %}
+                  <span class="text-muted">No reviews</span>
+                {% endif %}
+              </div>
+
+              {% if critter.reviews.count > 0 %}
+                <span class="small fw-bold ms-1" style="color: var(--cocoa-brown);">{{ critter.average_rating|floatformat:1 }}</span>
+                <span class="small text-muted opacity-75">({{ critter.reviews.count }})</span>
+              {% endif %}
+            </div>
+
+            <h5 class="fw-bold mb-3" style="color: var(--cocoa-brown);">{{ critter.name }}</h5>
+
+            <div class="mt-auto">
+              <a href="{% url 'critter_detail' critter.id %}" class="btn btn-custom-shop rounded-pill px-4 py-2 w-100">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <style>
+    .transition-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .transition-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08) !important;
+    }
+    /* Adds a soft glow to the stars */
+    .stars {
+      text-shadow: 0 0 1px rgba(216, 125, 74, 0.2);
+    }
+  </style>
+{% endblock %}

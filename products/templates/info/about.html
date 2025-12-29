@@ -1,0 +1,117 @@
+{% extends 'products/base.html' %}
+
+{% block content %}
+  <div class="container py-5">
+    <div class="row align-items-center mb-5 pb-lg-5">
+      <div class="col-md-5 mb-4 mb-md-0">
+        <div class="position-relative">
+          <img src="/media/about/pexels-n-voitkevich-6532059.jpg" class="img-fluid rounded-4 shadow-lg border border-5 border-white" alt="Meet the Maker" />
+          <div class="position-absolute bottom-0 start-0 m-3 badge bg-white text-dark p-2 px-3 rounded-pill shadow-sm fw-bold" style="color: var(--terracotta) !important;">Est. 2024</div>
+        </div>
+      </div>
+
+      <div class="col-md-7 ps-md-5">
+        <h6 class="text-uppercase fw-bold text-muted mb-2" style="letter-spacing: 2px;">The Maker's Story</h6>
+        <h1 class="display-4 fw-bold mb-4" style="color: var(--cocoa-brown);">One stitch at a time.</h1>
+
+        <p class="lead text-muted">
+          Hi, I'm the maker behind <strong>Crochet Critters</strong>. What started as a hobby in a small corner of my living room has grown into a passion for creating heirloom-quality companions.
+        </p>
+
+        <p>
+          Every critter—from the <strong>Striped Giraffe</strong> to the <strong>Arthur Bear</strong>—is hand-hooked using premium yarns and traditional amigurumi techniques. I believe that in a world of mass-production, there is something truly magical about an item that takes hours of focus, patience, and care to complete.
+        </p>
+
+        <div class="row mt-5 g-4">
+          <div class="col-6">
+            <h5 class="fw-bold" style="color: var(--cocoa-brown);">Premium Materials</h5>
+            <p class="small text-muted">I exclusively use soft, durable, and hypoallergenic yarns that are safe for all ages.</p>
+          </div>
+          <div class="col-6">
+            <h5 class="fw-bold" style="color: var(--cocoa-brown);">Handmade in Cotswolds</h5>
+            <p class="small text-muted">Every item is designed, stitched, and shipped directly from my home studio.</p>
+          </div>
+        </div>
+
+        <div class="d-flex gap-3 mt-4">
+          <a href="{% url 'home' %}" class="btn btn-custom-shop rounded-pill px-5">Browse the Nursery</a>
+          <a href="{% url 'care_guide' %}" class="btn btn-outline-secondary rounded-pill px-4">Care Guide</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row py-5 mb-5 bg-light rounded-5 px-4 px-lg-0 justify-content-center">
+      <div class="col-12 text-center mb-5">
+        <h2 class="fw-bold" style="color: var(--cocoa-brown);">How a Critter is Born</h2>
+        <p class="text-muted">The journey from a ball of yarn to your doorstep.</p>
+      </div>
+      <div class="col-md-3 text-center">
+        <div class="bg-white rounded-circle shadow-sm d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px; font-size: 2rem;">🧶</div>
+        <h6 class="fw-bold">1. Material Selection</h6>
+        <p class="small text-muted">We source the softest cotton and acrylic blends that stand up to years of playtime.</p>
+      </div>
+      <div class="col-md-1 d-none d-md-flex align-items-center justify-content-center text-muted">▶</div>
+      <div class="col-md-3 text-center">
+        <div class="bg-white rounded-circle shadow-sm d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px; font-size: 2rem;">🥢</div>
+        <h6 class="fw-bold">2. The Stitching</h6>
+        <p class="small text-muted">Using a tiny hook, hundreds of individual stitches are created to build the shape.</p>
+      </div>
+      <div class="col-md-1 d-none d-md-flex align-items-center justify-content-center text-muted">▶</div>
+      <div class="col-md-3 text-center">
+        <div class="bg-white rounded-circle shadow-sm d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px; font-size: 2rem;">🧸</div>
+        <h6 class="fw-bold">3. Stuffing & Details</h6>
+        <p class="small text-muted">Safety eyes are locked in and the critter is stuffed firmly before the final seam is closed.</p>
+      </div>
+    </div>
+
+    <div class="row mt-5 py-5 text-center">
+      <div class="col-12 mb-4">
+        <h2 class="fw-bold" style="color: var(--cocoa-brown);">Made for Memories</h2>
+        <p class="text-muted">Why choose a handmade Crochet Critter?</p>
+      </div>
+      <div class="col-md-4 p-3">
+        <div class="fs-1 mb-2">🎈</div>
+        <h5 class="fw-bold">No Two Alike</h5>
+        <p class="small text-muted px-lg-4">Because each critter is handmade, every single one has its own unique personality and slight "yarn-print."</p>
+      </div>
+      <div class="col-md-4 p-3">
+        <div class="fs-1 mb-2">✨</div>
+        <h5 class="fw-bold">Heirloom Quality</h5>
+        <p class="small text-muted px-lg-4">We use tight-tension stitching to ensure our friends don't lose their shape, even after years of hugs.</p>
+      </div>
+      <div class="col-md-4 p-3">
+        <div class="fs-1 mb-2">💌</div>
+        <h5 class="fw-bold">Gift Ready</h5>
+        <p class="small text-muted px-lg-4">Every adoption comes beautifully packaged, making them the perfect gift for baby showers or birthdays.</p>
+      </div>
+    </div>
+
+    <div class="row mt-5 p-4 p-lg-5 rounded-5 shadow-sm border align-items-center" style="background-color: var(--cream-puff);">
+      <div class="col-md-8">
+        <h3 class="fw-bold" style="color: var(--cocoa-brown);">The Comfort Project</h3>
+        <p class="mb-0">
+          We believe every child deserves a friend to hold. For every 10 critters adopted, we donate a "Comfort Bundle" (a handmade bear and a cozy blanket) to <strong>The Little Hearts Foundation</strong>, providing snuggly companions to children in local hospitals.
+        </p>
+      </div>
+      <div class="col-md-4 text-md-end mt-4 mt-md-0">
+        <span class="display-1 opacity-25">🌿</span>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .btn-custom-shop {
+      background-color: var(--terracotta);
+      color: white;
+      transition: all 0.3s ease;
+    }
+    .btn-custom-shop:hover {
+      background-color: var(--cocoa-brown);
+      color: white;
+      transform: translateY(-2px);
+    }
+    .bg-light {
+      background-color: #f8f9fa !important;
+    }
+  </style>
+{% endblock %}

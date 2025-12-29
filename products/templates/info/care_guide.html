@@ -1,0 +1,42 @@
+{% extends 'products/base.html' %}
+
+{% block content %}
+<div class="container mt-5 mb-5">
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold" style="color: var(--cocoa-brown);">Critter Care Guide</h1>
+        <p class="text-muted">A little love goes a long way in keeping your friends cozy.</p>
+        <div class="mx-auto mt-3" style="width: 60px; height: 3px; background-color: var(--sage-green); border-radius: 2px;"></div>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center">
+                <div class="fs-1 mb-3">🧼</div>
+                <h4 class="fw-bold" style="color: var(--cocoa-brown);">Bathing</h4>
+                <p class="text-muted small">Spot clean only with a damp cloth and mild soap. If they need a deep clean, hand wash in cool water. <strong>Never</strong> use a washing machine!</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center">
+                <div class="fs-1 mb-3">☀️</div>
+                <h4 class="fw-bold" style="color: var(--cocoa-brown);">Drying</h4>
+                <p class="text-muted small">Gently squeeze out excess water (don't wring!). Lay them flat on a towel in a sunny spot. Avoid the dryer at all costs—it's too scary for them!</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center">
+                <div class="fs-1 mb-3">☁️</div>
+                <h4 class="fw-bold" style="color: var(--cocoa-brown);">Reshaping</h4>
+                <p class="text-muted small">If your critter looks a bit squished after transit or too many hugs, simply give them a gentle massage and a 'puff' to restore their shape.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5 p-5 rounded-5 text-center" style="background-color: var(--cream-puff);">
+        <h5 class="fw-bold" style="color: var(--terracotta);">A Note on Safety</h5>
+        <p class="mb-0 mx-auto" style="max-width: 600px;">While we use secure safety eyes, always supervise small children during playtime. These critters are best friends for those aged 3 and up!</p>
+    </div>
+</div>
+{% endblock %}
