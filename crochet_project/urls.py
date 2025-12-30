@@ -14,6 +14,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.contrib.auth import views as auth_views # Import this
 from django.contrib import admin
 from django.urls import path
 from products import views #import views here
@@ -29,4 +30,9 @@ urlpatterns = [
     path('care-guide/', views.care_guide, name='care_guide'),
     path('shipping/', views.shipping, name='shipping'),
     path('custom-order/', views.custom_order, name='custom_order'),
+    path('cart/', views.cart_summary, name='cart_summary'), 
+    path('cart/add/<int:critter_id>/', views.cart_add, name='cart_add'),
+    path('cart/delete/', views.cart_delete, name='cart_delete'),
+    path('login/', auth_views.LoginView.as_view(template_name='products/login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

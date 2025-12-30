@@ -1,0 +1,60 @@
+{% extends 'products/base.html' %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row g-5">
+      <div class="col-lg-8">
+        {% if cart %}
+          {% for item in cart %}
+            <div class="card border-0 shadow-sm rounded-4 mb-3 overflow-hidden transition-card">
+              <div class="card-body p-0">
+                <div class="row g-0 align-items-center">
+                  <div class="col-3 col-md-2">
+                    <img src="{{ item.image }}" class="img-fluid" style="height: 120px; width: 100%; object-fit: cover;" />
+                  </div>
+
+                  <div class="col-6 col-md-7 ps-4">
+                    <h5 class="fw-bold mb-1" style="color: var(--cocoa-brown);">{{ item.name }}</h5>
+                    <p class="text-muted small mb-0">Handmade with Love</p>
+                    
+                    <div class="mt-2">
+                        <span class="badge bg-light text-dark border">Qty: {{ item.quantity }}</span>
+                        <small class="text-muted ms-2">${{ item.price }} each</small>
+                    </div>
+                  </div>
+
+                  <div class="col-3 col-md-3 text-center">
+                    <h6 class="fw-bold mb-3" style="color: var(--terracotta);">${{ item.total_price }}</h6>
+                    
+                    <form action="{% url 'cart_delete' %}" method="POST">
+                      {% csrf_token %}
+                      <input type="hidden" name="product_id" value="{{ item.id }}" />
+                      <button type="submit" class="btn btn-link text-danger text-decoration-none small fw-bold">Remove</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        {% else %}
+           {% endif %}
+      </div>
+
+      <div class="col-lg-4">
+        <div class="card border-0 shadow-sm rounded-4 p-4 sticky-top" style="top: 100px; background-color: #fcfbf9;">
+          <h4 class="fw-bold mb-4">Summary</h4>
+
+          <div class="d-flex justify-content-between mb-2">
+            <span class="text-muted">Adoption Subtotal</span>
+            <span class="fw-bold">${{ cart.get_total_price }}</span>
+          </div>
+
+          <div class="d-flex justify-content-between mb-4">
+            <span class="h5 fw-bold">Total</span>
+            <span class="h5 fw-bold" style="color: var(--terracotta);">${{ cart.get_total_price }}</span>
+          </div>
+          </div>
+      </div>
+    </div>
+</div>
+{% endblock %}

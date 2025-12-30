@@ -54,7 +54,11 @@
           </div>
 
           <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-5">
-            <button class="btn btn-custom-shop rounded-pill px-5 py-3 fw-bold shadow-sm">Adopt Me</button>
+            <form action="{% url 'cart_add' critter.id %}" method="POST">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-custom-shop rounded-pill px-5 py-3 fw-bold shadow-sm">Adopt Me 🧺</button>
+            </form>
+
             <a href="{% url 'home' %}" class="btn btn-outline-secondary rounded-pill px-4 py-3 border-0">Back to Shop</a>
           </div>
 
@@ -72,9 +76,9 @@
                   <span class="fw-bold" style="color: var(--cocoa-brown);">{{ review.user.username }}</span>
                   <span class="text-warning small">
                     {% if review.rating == 5 %}
-                       ★★★★★
+                      ★★★★★
                     {% elif review.rating == 4 %}
-                       ★★★★☆
+                      ★★★★☆
                     {% else %}
                       ★★★☆☆
                     {% endif %}
