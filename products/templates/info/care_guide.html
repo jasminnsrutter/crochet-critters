@@ -1,42 +1,128 @@
 {% extends 'products/base.html' %}
 
 {% block content %}
-<div class="container mt-5 mb-5">
+  <style>
+    /* Closed FAQ header color */
+    #careFaqAccordion .accordion-button {
+      background-color: #ffffff;
+      color: var(--cocoa-brown);
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+    
+    /* Hover state */
+    #careFaqAccordion .accordion-button:hover {
+      background-color: var(--cream-puff);
+    }
+    
+    /* Open (active) FAQ header color */
+    #careFaqAccordion .accordion-button:not(.collapsed) {
+      background-color: var(--cream-puff);
+      color: var(--cocoa-brown);
+      box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.06);
+    }
+    
+    /* Turn the Bootstrap chevron icon white when open */
+    #careFaqAccordion .accordion-button::after,
+    #careFaqAccordion .accordion-button:not(.collapsed)::after {
+      filter: brightness(0) saturate(100%);
+    }
+    
+    #careFaqAccordion .accordion-button:focus {
+      border-color: var(--sage-green);
+      box-shadow: 0 0 0 0.2rem rgba(138, 154, 91, 0.2);
+    }
+    
+    /* Answer body background & spacing */
+    #careFaqAccordion .accordion-body {
+      background-color: #ffffff;
+    }
+  </style>
+
+  <div class="container mt-5 mb-5">
     <div class="text-center mb-5">
-        <h1 class="display-5 fw-bold" style="color: var(--cocoa-brown);">Critter Care Guide</h1>
-        <p class="text-muted">A little love goes a long way in keeping your friends cozy.</p>
-        <div class="mx-auto mt-3" style="width: 60px; height: 3px; background-color: var(--sage-green); border-radius: 2px;"></div>
+      <h1 class="display-5 fw-bold" style="color: var(--cocoa-brown);">Critter Care Guide</h1>
+      <p class="text-muted">A little love goes a long way in keeping your friends cozy.</p>
+      <div class="mx-auto mt-3" style="width: 60px; height: 3px; background-color: var(--sage-green); border-radius: 2px;"></div>
     </div>
 
     <div class="row g-4 justify-content-center">
-        <div class="col-md-4">
-            <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center">
-                <div class="fs-1 mb-3">🧼</div>
-                <h4 class="fw-bold" style="color: var(--cocoa-brown);">Bathing</h4>
-                <p class="text-muted small">Spot clean only with a damp cloth and mild soap. If they need a deep clean, hand wash in cool water. <strong>Never</strong> use a washing machine!</p>
-            </div>
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center">
+          <div class="fs-1 mb-3">🧼</div>
+          <h4 class="fw-bold" style="color: var(--cocoa-brown);">Bathing</h4>
+          <p class="text-muted small">
+            Spot clean only with a damp cloth and mild soap. If they need a deep clean, hand wash in cool water. <strong>Never</strong> use a washing machine!
+          </p>
         </div>
+      </div>
 
-        <div class="col-md-4">
-            <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center">
-                <div class="fs-1 mb-3">☀️</div>
-                <h4 class="fw-bold" style="color: var(--cocoa-brown);">Drying</h4>
-                <p class="text-muted small">Gently squeeze out excess water (don't wring!). Lay them flat on a towel in a sunny spot. Avoid the dryer at all costs—it's too scary for them!</p>
-            </div>
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center">
+          <div class="fs-1 mb-3">☀️</div>
+          <h4 class="fw-bold" style="color: var(--cocoa-brown);">Drying</h4>
+          <p class="text-muted small">Gently squeeze out excess water (don't wring!). Lay them flat on a towel in a sunny spot. Avoid the dryer at all costs—it's too scary for them!</p>
         </div>
+      </div>
 
-        <div class="col-md-4">
-            <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center">
-                <div class="fs-1 mb-3">☁️</div>
-                <h4 class="fw-bold" style="color: var(--cocoa-brown);">Reshaping</h4>
-                <p class="text-muted small">If your critter looks a bit squished after transit or too many hugs, simply give them a gentle massage and a 'puff' to restore their shape.</p>
-            </div>
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center">
+          <div class="fs-1 mb-3">☁️</div>
+          <h4 class="fw-bold" style="color: var(--cocoa-brown);">Reshaping</h4>
+          <p class="text-muted small">If your critter looks a bit squished after transit or too many hugs, simply give them a gentle massage and a 'puff' to restore their shape.</p>
         </div>
+      </div>
     </div>
 
     <div class="mt-5 p-5 rounded-5 text-center" style="background-color: var(--cream-puff);">
-        <h5 class="fw-bold" style="color: var(--terracotta);">A Note on Safety</h5>
-        <p class="mb-0 mx-auto" style="max-width: 600px;">While we use secure safety eyes, always supervise small children during playtime. These critters are best friends for those aged 3 and up!</p>
+      <h5 class="fw-bold" style="color: var(--terracotta);">A Note on Safety</h5>
+      <p class="mb-0 mx-auto" style="max-width: 600px;">While we use secure safety eyes, always supervise small children during playtime. These critters are best friends for those aged 3 and up!</p>
     </div>
-</div>
+
+    <!-- FAQ Section -->
+    <div class="mt-5 pt-3 mx-auto" style="max-width: 800px;">
+      <div class="text-center mb-4">
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know about keeping your critter in peak condition</p>
+      </div>
+
+      <div class="accordion accordion-flush shadow-sm rounded-4 overflow-hidden border" id="careFaqAccordion">
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="faqHeadingOne"><button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne" aria-expanded="true" aria-controls="faqCollapseOne">What kind of soap should I use for spot cleaning?</button></h3>
+          <div id="faqCollapseOne" class="accordion-collapse collapse show" aria-labelledby="faqHeadingOne" data-bs-parent="#careFaqAccordion">
+            <div class="accordion-body text-muted small">Use a drop of gentle, fragrance-free dish soap, baby shampoo, or delicate wool wash mixed into cool water. Dab the stain with a soft white cloth rather than rubbing hard so the yarn fibers stay smooth.</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="faqHeadingTwo"><button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">How do I remove fuzz, lint, or pet hair from yarn?</button></h3>
+          <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingTwo" data-bs-parent="#careFaqAccordion">
+            <div class="accordion-body text-muted small">Lightly roll a standard adhesive lint roller over your critter, or carefully trim stray fuzz with small embroidery scissors. Avoid stiff bristle brushes, which can catch on individual stitches.</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="faqHeadingThree"><button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">What if a yarn end pokes out over time?</button></h3>
+          <div id="faqCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqHeadingThree" data-bs-parent="#careFaqAccordion">
+            <div class="accordion-body text-muted small">Because every critter is stitched and woven by hand, a tucked tail can occasionally peek out after lots of hugs. Don't pull or snip it-simply use a blunt tapestry needle or the tip of a crochet hook to tuck it gently back inside the stuffing.</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="faqHeadingFour"><button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseFour" aria-expanded="false" aria-controls="faqCollapseFour">Can I request embroidered eyes instead of safety eyes for a baby gift?</button></h3>
+          <div id="faqCollapseFour" class="accordion-collapse collapse" aria-labelledby="faqHeadingFour" data-bs-parent="#careFaqAccordion">
+            <div class="accordion-body text-muted small">
+              Yes! If you're adopting a critter for a child under 3, visit our <a href="{% url 'custom_order' %}" style="color: var(--terracotta);">Custom Orders</a> page and request hand-embroidered eyes so there are zero small parts.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="faqHeadingFive"><button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseFive" aria-expanded="false" aria-controls="faqCollapseFive">How should I store my critter when not on display?</button></h3>
+          <div id="faqCollapseFive" class="accordion-collapse collapse" aria-labelledby="faqHeadingFive" data-bs-parent="#careFaqAccordion">
+            <div class="accordion-body text-muted small">Keep your critter in a cool, dry spot away from prolonged direct sunlight (which can fade natural cotton and dyed yarns over time) and avoid compressing them under heavy items.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}
